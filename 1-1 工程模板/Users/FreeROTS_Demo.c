@@ -19,15 +19,14 @@ TaskHandle_t start_task_handler;
 StackType_t start_task_stack[START_TASK_STACK_SIZE];
 void Start_Task(void *pvParameters);
 
-/* 任务1（LED 翻转）配置 */
 #define TASK1_PRIORITY 1
 #define TASK1_STACK_SIZE 128
 TaskHandle_t task1_handler;
 StackType_t task1_stack[TASK1_STACK_SIZE];
 void vTask1(void *pvParameters);
 
-/* 任务2（打印时钟）配置 */
-#define TASK2_PRIORITY 1
+
+#define TASK2_PRIORITY 2
 #define TASK2_STACK_SIZE 128
 TaskHandle_t task2_handler;
 StackType_t task2_stack[TASK2_STACK_SIZE];
@@ -72,28 +71,22 @@ void Start_Task(void *pvParameters)
     taskEXIT_CRITICAL();             /* 退出临界区 */
 }
 
-/**
- * 函数: vTask1
- * 描述: LED 翻转任务，周期 500ms。
- */
+
 void vTask1(void *pvParameters)
 {
     while (1)
     {
-        HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
-        vTaskDelay(pdMS_TO_TICKS(500)); /* 延时 500ms */
+        printf("Task1 Running\r\n");
+        vTaskDelay(pdMS_TO_TICKS(500)); /* 延迟 500ms */
     }
 }
 
-/**
- * 函数: vTask2
- * 描述: 周期性打印 RTOS 与 HAL 毫秒计数，周期 200ms。
- */
+
 void vTask2(void *pvParameters)
 {
     while (1)
     {
-        printf("RTOS tick: %lu    HAL tick: %lu\r\n", xTaskGetTickCount(), HAL_GetTick());
-        vTaskDelay(pdMS_TO_TICKS(500)); /* 延时 500ms */
+        printf("Task2 Running\r\n");
+        vTaskDelay(pdMS_TO_TICKS(500)); /* 延迟 500ms */
     }
 }
