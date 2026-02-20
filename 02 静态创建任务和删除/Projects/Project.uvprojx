@@ -613,16 +613,6 @@
               <FilePath>..\Middlewares\FreeROTS\portable\MemMang\heap_4.c</FilePath>
             </File>
             <File>
-              <FileName>Tim2.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Middlewares\FreeROTS\source\Tim2.c</FilePath>
-            </File>
-            <File>
-              <FileName>Tim2.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\Middlewares\FreeROTS\source\Tim2.h</FilePath>
-            </File>
-            <File>
               <FileName>FreeRTOSConfig.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\Middlewares\FreeROTS\include\FreeRTOSConfig.h</FilePath>
@@ -671,6 +661,16 @@
               <FileName>KEY.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\Drivers\Hardware\KEY\KEY.h</FilePath>
+            </File>
+            <File>
+              <FileName>Timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\Hardware\TIMER\Timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>Timer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Drivers\Hardware\TIMER\Timer.h</FilePath>
             </File>
           </Files>
         </Group>
